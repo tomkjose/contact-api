@@ -1,6 +1,7 @@
 const express = require("express");
 const port = 8000;
 const cors = require("cors");
+const app = express();
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -8,7 +9,6 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-const app = express();
 const db = require("./config/mongoose");
 app.use(express.json());
 app.use(express.urlencoded());
