@@ -4,10 +4,11 @@ module.exports.create = async (req, res) => {
   console.log("req.body.name :>> ", req.body.name);
   try {
     const contact = new Contacts({
-      id: new Date.now(),
       name: req.body.name,
+      email: req.body.email,
       phone: req.body.phone,
     });
+    console.log("contact", contact);
     const newContact = await contact.save();
     res.status(201).json({
       data: {
@@ -21,6 +22,8 @@ module.exports.create = async (req, res) => {
 module.exports.display = async (req, res) => {
   try {
     const contact = await Contacts.find();
+
+    console.log("contact", contact);
     res.json({
       data: {
         contact: contact,
