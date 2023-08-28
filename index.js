@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: "https://gregarious-crepe-c1ca37.netlify.app/",
+    origin: "https://gregarious-crepe-c1ca37.netlify.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
